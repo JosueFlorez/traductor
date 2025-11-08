@@ -1,0 +1,53 @@
+### Health
+GET http://localhost:4000/health
+### DB Check
+GET http://localhost:4000/db-check
+
+### Crear ES->EN
+POST http://localhost:4000/words
+Content-Type: application/json
+
+{
+  "source_lang": "es",
+  "source_text": "hola",
+  "target_text": "hello"
+}
+
+### Crear EN->ES
+POST http://localhost:4000/words
+Content-Type: application/json
+
+{
+  "source_lang": "en",
+  "source_text": "hello",
+  "target_text": "hola"
+}
+
+### Listar
+GET http://localhost:4000/words
+
+### Filtrar
+GET http://localhost:4000/words?lang=es
+
+### Buscar
+GET http://localhost:4000/words?q=hol
+
+### Obtener por id
+GET http://localhost:4000/words/1
+
+### Actualizar
+PUT http://localhost:4000/words/1
+Content-Type: application/json
+
+{
+  "target_text": "hi"
+}
+
+### Eliminar
+DELETE http://localhost:4000/words/1
+
+### Traducir es->en
+GET http://localhost:4000/translate?text=hola&from=es&to=en
+
+### Traducir en->es
+GET http://localhost:4000/translate?text=hello&from=en&to=es
